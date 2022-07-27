@@ -60,6 +60,13 @@ def get_products():
   all_products = Product.query.all()
   result = products_schemas.dump(all_products)
   return jsonify(result)
+
+  #Get single product 
+
+@app.route('/product/<id>', methods=['GET'])
+def product(id):
+  product = Product.get(id)
+  return product_schema.jsonify(product)
     
 if __name__ =='__main__':
     app.run(debug=True)
