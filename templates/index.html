@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <nav class="navbar" style="background-color: #e3f2fd;">
+        <h1> Products </h1>
+    </nav>
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Action</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product.name}} </td>
+            <td>{{product.description}} </td>
+            <td>{{product.price}} </td>
+            <td>{{product.qty}}</td>
+            <td>
+                <a href=""><button type="button" class="btn btn-danger">Delete</button></a>
+                <a href=""><button type="button" class="btn btn-warning">Update</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
